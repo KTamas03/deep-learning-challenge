@@ -77,8 +77,15 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 -------------------------------------------------
 
-**Model 1: Remove "SPECIAL_CONSIDERATIONS" column**
+**Model 1: Remove "STATUS" and "SPECIAL_CONSIDERATIONS" columns**
+
+ In this model, I decided to remove the "STATUS" and "SPECIAL CONSIDERATION" columns as there appeared to be an extreme imbalance in the data:
  
+ ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/560d8180-9711-4da6-a8eb-97812ba5113e)
+
+ As shown above, the "STATUS" column shows "1" 34,794 times, and "0" only 5 times, whilst the "SPECIAL_CONSIDERATIONS" column shows "N" 34,272 times, and "Y" only 27 times. This can be problematic, especially for some machine learning algorithms. Models may struggle to learn patterns from the minority class, and the majority class can dominate the predictions.
+  
+  
   - Data Preprocessing (same as original model with changes below):
       - Removed variables: "EIN", "NAME", "SPECIAL_CONSIDERATIONS"
 
@@ -89,10 +96,13 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
   - Model Performance:
       - The model accuracy was 74.79% with loss of 52.18%.
-    
+
 -------------------------------------------------
 
 **Model 2: Add More Hidden Layers and Neurons**
+
+In this model, I decided to add more hidden layers and neurons as generally this can improve the accuracy of the model. Adding more layers and neurons increases the model's capacity to learn complex patterns in the data. The model becomes more capable of fitting the training data, including intricate and non-linear relationships.
+
 
   - Data Preprocessing (same as original model)
 
@@ -102,14 +112,25 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 
   - Model Performance:
-      - The model accuracy was 74.82% with loss of 51.79%.
+      - The model accuracy was 74.72% with loss of 51.75%.
 
 -------------------------------------------------
 
 **Model 3: Bin "ASK_AMT" Column and add Epochs**
 
+In this model, I decided to bin the "ASK_AMT" column as I could see there data was heavily skewed, with $5,000 occurring 25,398 times in the dataset:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/7e0e81d2-95d1-4576-bcf3-7e9dc5d855de)
+
+
+Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in dealing with outliers and extreme values by placing them into appropriate bins.
+
+In addition to this, I decided to also increase the number of Epochs. Training a neural network is like learning from examples. Each epoch is like going through all the examples once. When you increase the number of epochs, it's like practicing more, giving the model more chances to get better by learning from the examples.
+
+
   - Data Preprocessing (same as original model with changes below):
       - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins, "ASK_AMT" - 3 bins
+
 
   - Compiling, Training, and Evaluating the Model:
 
@@ -122,14 +143,20 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 ## Summary
 
-Overall, Model 3 performed the best because...
-Summary: Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+Overall, Model 3 performed the best with the highest accuracy score and lowest loss as shown in the table below:
 
 
 | Score | Original Model | Model 1 | Model 2 | Model 3 |
 |:--------------:|:--------------: |:--------------:|:--------------:|:--------------:|
 | Accuracy | 74.76% | 74.79% | 74.72% | 74.93% |
 | Loss | 52.11% | 52.18% | 51.75% | 51.50% |
+
+
+Whilst Model 1 and 3 saw an improvement on the Original model, Model 2 was the opposite.
+Removing the imbalance columns improved the accuracy score as hoped. Binning the ASK_AMT column and increasing the Epochs was the most effective, but only slightly.
+Adding more hidden layers and neurons resulted in a minor reduction of the accuracy of the model due to overfitting. This occurs when a model becomes too complex relative to the size and quality of the training dataset.
+
+Recommendation for a different model: logistic regression model could be suitable to predict an organisation's success if they receive funding from Alphabet Soup. The dataset is fairly simple and doesn't have too many categories within each feature. ALso the relationships between the variables are not too complex.
 
 
 ## Getting Started
