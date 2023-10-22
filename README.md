@@ -2,11 +2,18 @@
 **Module 21 Challenge - deep-learning**
 
 **Repository Folders and Contents:**
-- Credit_Risk:
-  - Resources:
-    - lending_data.csv
-  - credit_risk_classification.ipynb
-
+- checkpoints:
+  - weights.##.hdf5 files
+- checkpoints_model1:
+  - weights.##.hdf5 files
+- checkpoints_model2:
+  - weights.##.hdf5 files
+- checkpoints_model3:
+  - weights.##.hdf5 files
+- AlphabetSoupCharity.h5
+- AlphabetSoupCharity_Optimisation.h5
+- AlphabetSoupCharity_Optimisation.ipynb
+- AlphabetSoupCharity_Original.ipynb
 
 ## Table of Contents
 
@@ -33,8 +40,8 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - charity_data.csv
 
 **My Jupyter Notebook Python Scripts:**
-  - AlphabetSoupCharity_Original.ipynb
-  - AlphabetSoupCharity_Optimisation.ipynb
+  - AlphabetSoupCharity_Original.ipynb (Original Model)
+  - AlphabetSoupCharity_Optimisation.ipynb (Models 1, 2 and 3)
 
 **Tools/Libraries I Imported:**
   - import pandas as pd # To read and manipulate the lending data as a dataframe
