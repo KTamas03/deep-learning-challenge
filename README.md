@@ -43,6 +43,10 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - AlphabetSoupCharity_Original.ipynb (Original Model)
   - AlphabetSoupCharity_Optimisation.ipynb (Models 1, 2 and 3)
 
+**My Deep Learning Models:**
+  - AlphabetSoupCharity.h5 (Original Model)
+  - AlphabetSoupCharity_Optimisation.h5 (Model 3)
+
 **Tools/Libraries I Imported:**
   - import pandas as pd # To read and manipulate the lending data as a dataframe
   - from sklearn.model_selection import train_test_split # To split the dataset into training and testing data
