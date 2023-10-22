@@ -121,7 +121,8 @@ In this model, I decided to add more hidden layers and neurons as generally this
 In this model, I decided to bin the "ASK_AMT" column as I could see there data was heavily skewed, with $5,000 occurring 25,398 times in the dataset:
 
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/921b4dce-f710-4868-8405-3458f3c4046d)
+  ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/02be1826-5bd6-40f7-ab23-aeb9a0ab42be)
+
 
 
 Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in dealing with outliers and extreme values by placing them into appropriate bins.
