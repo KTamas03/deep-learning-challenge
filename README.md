@@ -54,6 +54,12 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 **Original Model:**
 
+In this model, my goal is to predict the success of an organization when they receive funding, with the target variable being "IS_SUCCESSFUL." I removed the "EIN" and "NAME" fields since they are merely an index and a text field, respectively, with no relevance to predicting success. All the other variables in the dataset serve as features.
+
+I binned the "APPLICATION_TYPE" and "CLASSIFICATION" variables to address issues related to rare or infrequent categories. Combining these infrequent categories with neighboring bins helps create a more balanced dataset. For the activation functions, I chose ReLU for the first and second layers of the model and Sigmoid for the output layer. The respective number of neurons is set to 80, 30, and 1 for each layer.
+
+I used ReLU activation functions for the first and second layers because they introduce non-linearity, which helps the model learn complex patterns and avoids vanishing gradient issues. The final Sigmoid activation in the output layer is ideal for binary classification tasks, like predicting "IS_SUCCESSFUL." The choice of 80, 30, and 1 neurons in the layers balances model complexity and pattern capture, aiming for an efficient yet powerful predictive model.
+
   - Data Preprocessing:
       - Target variable: "IS_SUCCESSFUL"
       - Feature variables: "APPLICATION_TYPE", "AFFILIATION", "CLASSIFICATION",	"USE_CASE",	"ORGANIZATION",	"STATUS, "INCOME_AMT", "SPECIAL_CONSIDERATIONS", "ASK_AMT"
