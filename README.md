@@ -75,6 +75,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 *Note. The original model was used as a benchmark for the next 3 models.*
 
+-------------------------------------------------
 
 **Model 1: Remove "SPECIAL_CONSIDERATIONS" column**
  
@@ -89,6 +90,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - Model Performance:
       - The model accuracy was 74.79% with loss of 52.18%.
     
+-------------------------------------------------
 
 **Model 2: Add More Hidden Layers and Neurons**
 
@@ -102,6 +104,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - Model Performance:
       - The model accuracy was 74.82% with loss of 51.79%.
 
+-------------------------------------------------
 
 **Model 3: Bin "ASK_AMT" Column and add EPOCs**
 
