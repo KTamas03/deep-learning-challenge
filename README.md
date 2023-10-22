@@ -36,8 +36,8 @@
 
 The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and indicates whether an organisation is unsuccessful (0) or successful (1).
   
-**Resource File I Used:**
-  - charity_data.csv
+**Resource I Used:**
+  - https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv
 
 **My Jupyter Notebook Python Scripts:**
   - AlphabetSoupCharity_Original.ipynb (Original Model)
