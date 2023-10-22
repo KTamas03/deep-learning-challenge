@@ -29,7 +29,7 @@
 
 **Purpose of the analysis:** In this scenario, I employed python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model to predict whether applicants' of funding will be successful if they receive funding from nonprofit foundation Alphabet Soup. I aimed to achieve a model of 75% accuracy whilst making changes to the data in preprocessing stage and in the model compilation.
   
-**Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) with over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the followined fields:
+**Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) with over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the following fields:
 
 ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/95580398-0aa0-4ca9-8327-f7b3fc7e2155)
 
