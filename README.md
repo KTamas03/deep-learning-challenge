@@ -132,6 +132,10 @@ Summary: Summarise the overall results of the deep learning model. Include a rec
 
       ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9e8dc55c-3ee0-4827-8c4c-e19e1e8193f2)
 
+| Score | Original Model | Model 1 | Model 2 | Model 3 |
+|:--------------:|:--------------: |:--------------:|:--------------:|:--------------:|
+| Accuracy | 74.76% | 74.78% | 74.82% | 74.94% |
+| Loss | 52.11% | 52.08% | 51.79% | 51.47% |
 
 
 ## Getting Started
