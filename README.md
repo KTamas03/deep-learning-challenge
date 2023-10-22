@@ -47,26 +47,26 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 **Original Model:**
 
-*Data Preprocessing:*
-  - Target variable: "IS_SUCCESSFUL"
-  - Feature variables: "APPLICATION_TYPE", "AFFILIATION", "CLASSIFICATION",	"USE_CASE",	"ORGANIZATION",	"STATUS, "INCOME_AMT", "SPECIAL_CONSIDERATIONS", "ASK_AMT"
-  - Removed variables: "EIN", "NAME"
-  - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins
-  - The categorical columns were converted to numeric
-  - The data was split into features and target arrays
-  - The data was also then split into training and test datasets
-  - The data was then scaled
+  - Data Preprocessing:
+      - Target variable: "IS_SUCCESSFUL"
+      - Feature variables: "APPLICATION_TYPE", "AFFILIATION", "CLASSIFICATION",	"USE_CASE",	"ORGANIZATION",	"STATUS, "INCOME_AMT", "SPECIAL_CONSIDERATIONS", "ASK_AMT"
+      - Removed variables: "EIN", "NAME"
+      - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins
+      - The categorical columns were converted to numeric
+      - The data was split into features and target arrays
+      - The data was also then split into training and test datasets
+      - The data was then scaled
 
-*Compiling, Training, and Evaluating the Model:*
+  - Compiling, Training, and Evaluating the Model:*
 
 ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9d409b26-f714-4496-9940-7a8971bc3dfc)
 
-Model Performance:
-  - The model accuracy was 72.8% with loss od 56.0%.
+  - Model Performance:
+      - The model accuracy was 72.8% with loss od 56.0%.
 
 ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/605aa2f3-60b5-45db-acad-df42a876f9f0)
 
-The original model was used as a benchmark for the next 3 models.
+*Note. The original model was used as a benchmark for the next 3 models.*
 
 **Model 1:**
 The matrix below once again reveals a very high correlation between the independent variables, as indicated by the predominantly high Pearson correlation coefficient values, most of which are over 0.80. This suggests the presence of multicollinearity within the lending_df dataframe.
