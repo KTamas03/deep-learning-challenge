@@ -23,7 +23,9 @@
 **Purpose of the analysis:** In this scenario, I employed python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model to predict whether applicants' of funding will be successful if they receive funding from nonprofit foundation Alphabet Soup. I aimed to assess whether an organisation should be categorized as a "successful" or "unsuccessful" based on the available data.
   
 **Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) containing over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the followined fields:
-![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/7b15f50b-727c-4e9a-9c70-5522b1f5c6e7)
+
+![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/95580398-0aa0-4ca9-8327-f7b3fc7e2155)
+
 
 The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and indicates whether an organisation is unsuccessful (0) or successful (1).
   
