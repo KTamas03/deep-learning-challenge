@@ -48,6 +48,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - AlphabetSoupCharity_Optimisation.h5 (Model 3)
 
 **My Checkpoint Weight Files:**
+
 *These files contain the checkpoint weights of each deep learning model for every 5 epochs.*
   - checkpoints:
     - weights.##.hdf5 files
