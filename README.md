@@ -87,7 +87,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   
   
   - Data Preprocessing (same as original model with changes below):
-      - Removed variables: "EIN", "NAME", "SPECIAL_CONSIDERATIONS"
+      - Removed variables: "EIN", "NAME", "STATUS", "SPECIAL_CONSIDERATIONS"
 
   - Compiling, Training, and Evaluating the Model:
 
