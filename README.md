@@ -199,4 +199,4 @@ Recommendation for a different model: I recommend considering a logistic regress
   - https://scikit-learn.org/stable/install.html
   
 ## Contributing
-  - How to define a callback to sace the model's weights every five epochs: https://www.tensorflow.org/tutorials/keras/save_and_load
+  - How to define a callback to save the model's weights every five epochs: https://www.tensorflow.org/tutorials/keras/save_and_load
