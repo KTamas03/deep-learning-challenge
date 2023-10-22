@@ -2,11 +2,18 @@
 **Module 21 Challenge - deep-learning**
 
 **Repository Folders and Contents:**
-- Credit_Risk:
-  - Resources:
-    - lending_data.csv
-  - credit_risk_classification.ipynb
-
+- checkpoints:
+  - weights.##.hdf5 files
+- checkpoints_model1:
+  - weights.##.hdf5 files
+- checkpoints_model2:
+  - weights.##.hdf5 files
+- checkpoints_model3:
+  - weights.##.hdf5 files
+- AlphabetSoupCharity.h5
+- AlphabetSoupCharity_Optimisation.h5
+- AlphabetSoupCharity_Optimisation.ipynb
+- AlphabetSoupCharity_Original.ipynb
 
 ## Table of Contents
 
@@ -20,9 +27,9 @@
 
 ## Overview of the Analysis
 
-**Purpose of the analysis:** In this scenario, I employed python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model to predict whether applicants' of funding will be successful if they receive funding from nonprofit foundation Alphabet Soup. I aimed to assess whether an organisation should be categorized as a "successful" or "unsuccessful" based on the available data.
+**Purpose of the analysis:** In this scenario, I used Python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model for predicting the success of funding applicants from the nonprofit foundation Alphabet Soup. My goal was to achieve a model accuracy of at least 75% by making changes to the data during the preprocessing stage and in the model compilation.
   
-**Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) containing over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the followined fields:
+**Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) with over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the following fields:
 
 ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/95580398-0aa0-4ca9-8327-f7b3fc7e2155)
 
@@ -33,8 +40,8 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - charity_data.csv
 
 **My Jupyter Notebook Python Scripts:**
-  - AlphabetSoupCharity_Original.ipynb
-  - AlphabetSoupCharity_Optimisation.ipynb
+  - AlphabetSoupCharity_Original.ipynb (Original Model)
+  - AlphabetSoupCharity_Optimisation.ipynb (Models 1, 2 and 3)
 
 **Tools/Libraries I Imported:**
   - import pandas as pd # To read and manipulate the lending data as a dataframe
@@ -46,6 +53,12 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 ## Results
 
 **Original Model:**
+
+In this model, my goal is to predict the success of an organization when they receive funding, with the target variable being "IS_SUCCESSFUL." I removed the "EIN" and "NAME" fields since they are merely an index and a text field, respectively, with no relevance to predicting success. All the other variables in the dataset serve as features.
+
+I binned the "APPLICATION_TYPE" and "CLASSIFICATION" variables to address issues related to rare or infrequent categories. Combining these infrequent categories with neighboring bins helps create a more balanced dataset. For the activation functions, I chose ReLU for the first and second layers of the model and Sigmoid for the output layer. The respective number of neurons is set to 80, 30, and 1 for each layer.
+
+I used ReLU activation functions for the first and second layers because they introduce non-linearity, which helps the model learn complex patterns and avoids vanishing gradient issues. The final Sigmoid activation in the output layer is ideal for binary classification tasks, like predicting "IS_SUCCESSFUL." The choice of 80, 30, and 1 neurons in the layers balances model complexity and pattern capture, aiming for an efficient yet powerful predictive model.
 
   - Data Preprocessing:
       - Target variable: "IS_SUCCESSFUL"
@@ -59,32 +72,98 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
   - Compiling, Training, and Evaluating the Model:
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/a9f41252-56c5-483c-a96f-e2bfe39fb767)
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/4ff869cf-7142-4f9b-b8e2-5875337063df)
 
-
+        
   - Model Performance:
       - The model accuracy was 74.76% with loss of 52.11%.
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/0d64abd3-b6c7-4eb2-8867-9a23c4574ad5)
 
 *Note. The original model was used as a benchmark for the next 3 models.*
 
-**Model 1:**
-The matrix below once again reveals a very high correlation between the independent variables, as indicated by the predominantly high Pearson correlation coefficient values, most of which are over 0.80. This suggests the presence of multicollinearity within the lending_df dataframe.
+-------------------------------------------------
+
+**Model 1: Remove "STATUS" and "SPECIAL_CONSIDERATIONS" columns**
+
+ In this model, I decided to remove the "STATUS" and "SPECIAL CONSIDERATION" columns as there appeared to be an extreme imbalance in the data:
+ 
+ ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/560d8180-9711-4da6-a8eb-97812ba5113e)
+
+As shown above, the "STATUS" column displays "1" 34,794 times and "0" only 5 times, while the "SPECIAL_CONSIDERATIONS" column indicates "N" 34,272 times and "Y" only 27 times. This situation can be problematic, particularly for certain machine learning algorithms. Models may encounter difficulty in learning patterns from the minority class, with the majority class potentially dominating the predictions.
+  
+  
+  - Data Preprocessing (same as original model with changes below):
+      - Removed variables: "EIN", "NAME", "STATUS", "SPECIAL_CONSIDERATIONS"
+
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/3f5e0bc7-6568-4feb-bee3-a8119dec040e)
 
 
-**Model 2:**
-The extremely high VIF values (any score exceeding 5) indicate the presence of multicollinearity within the lending_df dataframe. This implies that accurately determining the coefficients for each independent variable and their true impact on the dependent variable will be challenging. Additionally, there is potential for overfitting, meaning the model may capture noise in the data due to highly correlated variables, rather than the genuine underlying relationships.
+  - Model Performance:
+      - The model accuracy was 74.79% with loss of 52.18%.
+
+-------------------------------------------------
+
+**Model 2: Add More Hidden Layers and Neurons**
+
+In this model, I chose to include additional hidden layers and neurons. This decision is based on the general principle that such an adjustment can enhance the model's accuracy. By adding more layers and neurons, the model's capacity to discern intricate patterns in the data is expanded. This allows the model to better accommodate the training data, capturing complex and non-linear relationships.
 
 
-**Model 3:**
-The confusion matrix shows that the model correctly predicted the vast majority of healthy loans in the dataset (18663). The model also accurately predicted 563 high-risk loans. However, there were 102 false positives, meaning the model incorrectly predicted high-risk loans that were actually healthy loans. Additionally, there were 56 false negatives, indicating cases where the model incorrectly predicted healthy loans that were actually high-risk loans.
+  - Data Preprocessing (same as original model)
 
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/89d8d3f1-f061-47ff-a200-82688138e48d)
+
+
+  - Model Performance:
+      - The model accuracy was 74.72% with loss of 51.75%.
+
+-------------------------------------------------
+
+**Model 3: Bin "ASK_AMT" Column and add Epochs**
+
+In this model, I chose to bin the "ASK_AMT" column because I observed a significant skew in the data, with $5,000 occurring 25,398 times in the dataset.:
+
+
+  ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/02be1826-5bd6-40f7-ab23-aeb9a0ab42be)
+
+
+
+Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in handling outliers and extreme values by placing them into appropriate bins.
+
+Additionally, I chose to increase the number of epochs. Training a neural network involves adjusting the model's weights to minimize the loss function. Each epoch represents one complete pass through the training dataset. Increasing the number of epochs provides the model with more opportunities to learn from the data. 
+
+
+  - Data Preprocessing (same as original model with changes below):
+      - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins, "ASK_AMT" - 3 bins
+
+
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/d669c176-846d-4fa8-982b-a85bae0c8232)
+
+  
+- Model Performance:
+      - The model accuracy was 74.93% with loss of 51.50%.
+      
 
 ## Summary
 
-Overall, model??? performed the best because...
-Summary: Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+Overall, Model 3 performed the best with the highest accuracy score and lowest loss as shown in the table below:
+
+
+| Score | Original Model | Model 1 | Model 2 | Model 3 |
+|:--------------:|:--------------: |:--------------:|:--------------:|:--------------:|
+| Accuracy | 74.76% | 74.79% | 74.72% | 74.93% |
+| Loss | 52.11% | 52.18% | 51.75% | 51.50% |
+
+
+While Models 1 and 3 showed an improvement over the original model, Model 2 exhibited the opposite effect. The removal of imbalanced columns led to an improvement in the accuracy score as anticipated. Binning the "ASK_AMT" column and increasing the number of epochs were the most effective changes, albeit only slightly. However, adding more hidden layers and neurons resulted in a minor reduction in model accuracy due to overfitting. This can happen when a model becomes overly complex in relation to the size and quality of the training dataset. I didn't reach the accuracy of 75% as hoped, but achieving a top accuracy score of 74.93% for Model 3 is a close and impressive result.
+
+Recommendation for a different model: I recommend considering a logistic regression model to predict an organization's success when receiving funding from Alphabet Soup. The dataset is relatively straightforward and contains a manageable number of categories within each feature. Furthermore, the relationships between the variables are not highly intricate. Logistic regression is a suitable choice because it excels in binary classification problems, making it a practical and interpretable model for this scenario.
+
 
 ## Getting Started
 
@@ -103,6 +182,4 @@ Summary: Summarise the overall results of the deep learning model. Include a rec
   - https://scikit-learn.org/stable/install.html
   
 ## Contributing
-  - How to create pairplots plots: https://seaborn.pydata.org/generated/seaborn.pairplot.html
-  - How to create correlation matrix heatmap: https://seaborn.pydata.org/generated/seaborn.heatmap.html
-  - How to calculate variation inflation factor: https://www.geeksforgeeks.org/detecting-multicollinearity-with-vif-python/
+  - How to define a callback to sace the model's weights every five epochs: https://www.tensorflow.org/tutorials/keras/save_and_load
