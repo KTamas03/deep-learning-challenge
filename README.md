@@ -78,7 +78,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 **Model 1: Remove "SPECIAL_CONSIDERATIONS" column**
  
-  - Data Preprocessing: (same as above with changes below)
+  - Data Preprocessing (same as original model with changes below):
       - Removed variables: "EIN", "NAME", "SPECIAL_CONSIDERATIONS"
 
   - Compiling, Training, and Evaluating the Model:
@@ -92,18 +92,47 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
       ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/b6657a92-c316-4306-a4dd-ff4fb30e1ffb)
 
 
-**Model 2:**
-The extremely high VIF values (any score exceeding 5) indicate the presence of multicollinearity within the lending_df dataframe. This implies that accurately determining the coefficients for each independent variable and their true impact on the dependent variable will be challenging. Additionally, there is potential for overfitting, meaning the model may capture noise in the data due to highly correlated variables, rather than the genuine underlying relationships.
+**Model 2: Add More Hidden Layers and Neurons**
+
+  - Data Preprocessing (same as original model)
+
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/c3d4bff5-e2e2-4a56-8f0a-a07f90bc0e81)
 
 
-**Model 3:**
-The confusion matrix shows that the model correctly predicted the vast majority of healthy loans in the dataset (18663). The model also accurately predicted 563 high-risk loans. However, there were 102 false positives, meaning the model incorrectly predicted high-risk loans that were actually healthy loans. Additionally, there were 56 false negatives, indicating cases where the model incorrectly predicted healthy loans that were actually high-risk loans.
+  - Model Performance:
+      - The model accuracy was 74.82% with loss of 51.79%.
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/b11ec779-6553-46fc-a599-4c840ef90876)
 
 
+**Model 3: Bin "ASK_AMT" Column and add EPOCs**
+
+  - Data Preprocessing (same as original model with changes below):
+      - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins, "ASK_AMT" - 3 bins
+
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/a2819266-e412-495e-abca-0c0faa01f362)
+
+
+  - Model Performance:
+      - The model accuracy was 74.94% with loss of 51.47%.
+      
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/5932e6cf-a6d3-4700-adeb-c1d4258f948a)
+
+  
 ## Summary
 
 Overall, model??? performed the best because...
 Summary: Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/0d64abd3-b6c7-4eb2-8867-9a23c4574ad5)
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9e8dc55c-3ee0-4827-8c4c-e19e1e8193f2)
+
+
 
 ## Getting Started
 
