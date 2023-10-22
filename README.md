@@ -57,7 +57,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
       - The data was also then split into training and test datasets
       - The data was then scaled
 
-  - Compiling, Training, and Evaluating the Model:*
+  - Compiling, Training, and Evaluating the Model:
 
 ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9d409b26-f714-4496-9940-7a8971bc3dfc)
 
