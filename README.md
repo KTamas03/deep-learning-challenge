@@ -125,12 +125,9 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   
 ## Summary
 
-Overall, model??? performed the best because...
+Overall, Model 3 performed the best because...
 Summary: Summarise the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/0d64abd3-b6c7-4eb2-8867-9a23c4574ad5)
-
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9e8dc55c-3ee0-4827-8c4c-e19e1e8193f2)
 
 | Score | Original Model | Model 1 | Model 2 | Model 3 |
 |:--------------:|:--------------: |:--------------:|:--------------:|:--------------:|
