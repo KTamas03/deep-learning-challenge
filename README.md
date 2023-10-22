@@ -106,7 +106,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 -------------------------------------------------
 
-**Model 3: Bin "ASK_AMT" Column and add EPOCs**
+**Model 3: Bin "ASK_AMT" Column and add Epochs**
 
   - Data Preprocessing (same as original model with changes below):
       - Binned variables: "APPLICATION_TYPE" - 9 bins, "CLASSIFICATION" - 6 bins, "ASK_AMT" - 3 bins
@@ -149,6 +149,4 @@ Summary: Summarise the overall results of the deep learning model. Include a rec
   - https://scikit-learn.org/stable/install.html
   
 ## Contributing
-  - How to create pairplots plots: https://seaborn.pydata.org/generated/seaborn.pairplot.html
-  - How to create correlation matrix heatmap: https://seaborn.pydata.org/generated/seaborn.heatmap.html
-  - How to calculate variation inflation factor: https://www.geeksforgeeks.org/detecting-multicollinearity-with-vif-python/
+  - How to define a callback to sace the model's weights every five epochs: https://www.tensorflow.org/tutorials/keras/save_and_load
