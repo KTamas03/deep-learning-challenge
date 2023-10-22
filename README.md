@@ -76,8 +76,20 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 *Note. The original model was used as a benchmark for the next 3 models.*
 
-**Model 1:**
-The matrix below once again reveals a very high correlation between the independent variables, as indicated by the predominantly high Pearson correlation coefficient values, most of which are over 0.80. This suggests the presence of multicollinearity within the lending_df dataframe.
+**Model 1: Remove "SPECIAL_CONSIDERATIONS" column**
+ 
+  - Data Preprocessing: (same as above with changes below)
+      - Removed variables: "EIN", "NAME", "SPECIAL_CONSIDERATIONS"
+
+  - Compiling, Training, and Evaluating the Model:
+
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/7d21f741-1b00-4cef-a1fa-9d30ab04f448)
+
+
+  - Model Performance:
+      - The model accuracy was 74.76% with loss of 52.11%.
+      
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/b6657a92-c316-4306-a4dd-ff4fb30e1ffb)
 
 
 **Model 2:**
