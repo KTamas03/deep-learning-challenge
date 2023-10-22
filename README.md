@@ -47,6 +47,18 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
   - AlphabetSoupCharity.h5 (Original Model)
   - AlphabetSoupCharity_Optimisation.h5 (Model 3)
 
+**My Checkpoint Weight Files:**
+*These files contain the checkpoint weights of each deep learning model for every 5 epochs.*
+  - checkpoints:
+    - weights.##.hdf5 files
+  - checkpoints_model1:
+    - weights.##.hdf5 files
+  - checkpoints_model2:
+    - weights.##.hdf5 files
+  - checkpoints_model3:
+    - weights.##.hdf5 files
+
+
 **Tools/Libraries I Imported:**
   - import pandas as pd # To read and manipulate the lending data as a dataframe
   - from sklearn.model_selection import train_test_split # To split the dataset into training and testing data
