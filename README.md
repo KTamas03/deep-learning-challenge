@@ -27,7 +27,7 @@
 
 ## Overview of the Analysis
 
-**Purpose of the analysis:** In this scenario, I employed python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model to predict whether applicants' of funding will be successful if they receive funding from nonprofit foundation Alphabet Soup. I aimed to achieve a model of 75% accuracy whilst making changes to the data in preprocessing stage and in the model compilation.
+**Purpose of the analysis:** In this scenario, I used Python and deep machine learning techniques within a Jupyter Notebook to develop a neural network model for predicting the success of funding applicants from the nonprofit foundation Alphabet Soup. My goal was to achieve a model accuracy of at least 75% by making changes to the data during the preprocessing stage and in the model compilation.
   
 **Data Used:** I worked with a charity dataset (https://static.bc-edx.com/data/dla-1-2/m21/lms/starter/charity_data.csv) with over 34,000 organisations that had received funds from Alphabet Soup. This dataset contained the following fields:
 
@@ -83,7 +83,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
  
  ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/560d8180-9711-4da6-a8eb-97812ba5113e)
 
- As shown above, the "STATUS" column shows "1" 34,794 times, and "0" only 5 times, whilst the "SPECIAL_CONSIDERATIONS" column shows "N" 34,272 times, and "Y" only 27 times. This can be problematic, especially for some machine learning algorithms. Models may struggle to learn patterns from the minority class, and the majority class can dominate the predictions.
+As shown above, the "STATUS" column displays "1" 34,794 times and "0" only 5 times, while the "SPECIAL_CONSIDERATIONS" column indicates "N" 34,272 times and "Y" only 27 times. This situation can be problematic, particularly for certain machine learning algorithms. Models may encounter difficulty in learning patterns from the minority class, with the majority class potentially dominating the predictions.
   
   
   - Data Preprocessing (same as original model with changes below):
@@ -101,7 +101,7 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
 **Model 2: Add More Hidden Layers and Neurons**
 
-In this model, I decided to add more hidden layers and neurons as generally this can improve the accuracy of the model. Adding more layers and neurons increases the model's capacity to learn complex patterns in the data. The model becomes more capable of fitting the training data, including intricate and non-linear relationships.
+In this model, I chose to include additional hidden layers and neurons. This decision is based on the general principle that such an adjustment can enhance the model's accuracy. By adding more layers and neurons, the model's capacity to discern intricate patterns in the data is expanded. This allows the model to better accommodate the training data, capturing complex and non-linear relationships.
 
 
   - Data Preprocessing (same as original model)
@@ -118,16 +118,16 @@ In this model, I decided to add more hidden layers and neurons as generally this
 
 **Model 3: Bin "ASK_AMT" Column and add Epochs**
 
-In this model, I decided to bin the "ASK_AMT" column as I could see there data was heavily skewed, with $5,000 occurring 25,398 times in the dataset:
+In this model, I chose to bin the "ASK_AMT" column because I observed a significant skew in the data, with $5,000 occurring 25,398 times in the dataset.:
 
 
   ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/02be1826-5bd6-40f7-ab23-aeb9a0ab42be)
 
 
 
-Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in dealing with outliers and extreme values by placing them into appropriate bins.
+Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in handling outliers and extreme values by placing them into appropriate bins.
 
-In addition to this, I decided to also increase the number of Epochs. Training a neural network involves adjusting the model's weights to minimize the loss function. Each epoch represents one complete pass through the training dataset. Increasing the number of epochs allows the model more opportunities to learn from the data. 
+Additionally, I chose to increase the number of epochs. Training a neural network involves adjusting the model's weights to minimize the loss function. Each epoch represents one complete pass through the training dataset. Increasing the number of epochs provides the model with more opportunities to learn from the data. 
 
 
   - Data Preprocessing (same as original model with changes below):
@@ -154,11 +154,9 @@ Overall, Model 3 performed the best with the highest accuracy score and lowest l
 | Loss | 52.11% | 52.18% | 51.75% | 51.50% |
 
 
-Whilst Model 1 and 3 saw an improvement on the Original model, Model 2 was the opposite.
-Removing the imbalance columns improved the accuracy score as hoped. Binning the ASK_AMT column and increasing the Epochs was the most effective, but only slightly.
-Adding more hidden layers and neurons resulted in a minor reduction of the accuracy of the model due to overfitting. This occurs when a model becomes too complex relative to the size and quality of the training dataset.
+While Models 1 and 3 showed an improvement over the original model, Model 2 exhibited the opposite effect. The removal of imbalanced columns led to an improvement in the accuracy score as anticipated. Binning the "ASK_AMT" column and increasing the number of epochs were the most effective changes, albeit only slightly. However, adding more hidden layers and neurons resulted in a minor reduction in model accuracy due to overfitting. This can happen when a model becomes overly complex in relation to the size and quality of the training dataset.
 
-Recommendation for a different model: logistic regression model could be suitable to predict an organisation's success if they receive funding from Alphabet Soup. The dataset is fairly simple and doesn't have too many categories within each feature. ALso the relationships between the variables are not too complex.
+Recommendation for a different model: I recommend considering a logistic regression model to predict an organization's success when receiving funding from Alphabet Soup. The dataset is relatively straightforward and contains a manageable number of categories within each feature. Furthermore, the relationships between the variables are not highly intricate. Logistic regression is a suitable choice because it excels in binary classification problems, making it a practical and interpretable model for this scenario.
 
 
 ## Getting Started
