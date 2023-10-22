@@ -127,7 +127,7 @@ In this model, I decided to bin the "ASK_AMT" column as I could see there data w
 
 Binning can be beneficial when dealing with data that has a skewed or non-uniform distribution. It helps in dealing with outliers and extreme values by placing them into appropriate bins.
 
-In addition to this, I decided to also increase the number of Epochs. Training a neural network is like learning from examples. Each epoch is like going through all the examples once. When you increase the number of epochs, it's like practicing more, giving the model more chances to get better by learning from the examples.
+In addition to this, I decided to also increase the number of Epochs. Training a neural network involves adjusting the model's weights to minimize the loss function. Each epoch represents one complete pass through the training dataset. Increasing the number of epochs allows the model more opportunities to learn from the data. 
 
 
   - Data Preprocessing (same as original model with changes below):
