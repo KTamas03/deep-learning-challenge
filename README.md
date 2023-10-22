@@ -59,12 +59,13 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 
   - Compiling, Training, and Evaluating the Model:
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9d409b26-f714-4496-9940-7a8971bc3dfc)
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/a9f41252-56c5-483c-a96f-e2bfe39fb767)
+
 
   - Model Performance:
-      - The model accuracy was 72.8% with loss od 56.0%.
+      - The model accuracy was 74.76% with loss of 52.11%.
 
-      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/605aa2f3-60b5-45db-acad-df42a876f9f0)
+      ![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/0d64abd3-b6c7-4eb2-8867-9a23c4574ad5)
 
 *Note. The original model was used as a benchmark for the next 3 models.*
 
