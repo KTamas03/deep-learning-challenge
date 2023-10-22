@@ -58,12 +58,16 @@ The target variable I wanted to predict was "IS_SUCCESSFUL", which is binary and
 *Compiling, Training, and Evaluating the Model:*
 
 I chose to have two hidden layers using "relu" activation function for both with 80 neurons for the first one and 30 neurons for the second. I also had an outer layer using sigmoid activation function with 1 neuron.
+![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/67fb4d90-4c90-4c04-bea4-9dab6240b23f)
+![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/9d409b26-f714-4496-9940-7a8971bc3dfc)
+![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/97037d16-d3f5-419d-991b-de0fe0886337)
 
-![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/cca16c91-48ed-4668-a296-6fdef9d66b44)
+
 
 Model Performance:
+![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/605aa2f3-60b5-45db-acad-df42a876f9f0)
 
-![image](https://github.com/KTamas03/deep-learning-challenge/assets/132874272/5f7e06a5-5205-4371-9460-ce784f170233)
+
 
 The original model was used as a benchmark for the next 3 models.
 
